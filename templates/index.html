@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="~/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average"
+        allowfullscreen></iframe>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Dow Jones Industrials Study</h1>
+          <p>Use the interactive chart below to explore the dataset</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Select Year</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"> Worst Performers </h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div id="bar"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="line"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Dow Jones Industrial Average (Dow 30) Dollars</th>
+                <th>S&P 500 Dollars</th>
+                <th>TBM Dollars</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2000</td>
+                <td>10,000.00</td>
+                <td>10,000.00</td>
+                <td>10,000.00</td>
+              </tr>
+              <tr>
+                <td>2001</td>
+                <td>9,287.04</td>
+                <td>8,695.73</td>
+                <td>12,164.29</td>
+              </tr>
+              <tr>
+                <td>2002</td>
+                <td>7,730.12</td>
+                <td>6,663.89</td>
+                <td>11,240.88</td>
+              </tr>
+              <tr>
+                <td>2003</td>
+                <td>9,686.69</td>
+                <td>8,421.85</td>
+                <td>18,906.64</td>
+              </tr>
+              <tr>
+                <td>2004</td>
+                <td>9,992.76</td>
+                <td>9,179.27</td>
+                <td>18,489.81</td>
+              </tr>
+              <tr>
+                <td>2005</td>
+                <td>9,931.37</td>
+                <td>9,454.74</td>
+                <td>19,120.15</td>
+              </tr>
+              <tr>
+                <td>2006</td>
+                <td>11,548.11</td>
+                <td>10,742.42</td>
+                <td>23,204.66</td>
+              </tr>
+              <tr>
+                <td>2007</td>
+                <td>12,294.49</td>
+                <td>11,123.70</td>
+                <td>23,417.28</td>
+              </tr>
+              <tr>
+                <td>2008</td>
+                <td>8,136.23</td>
+                <td>6,844.47</td>
+                <td>15,529.11</td>
+              </tr>
+              <tr>
+                <td>2009</td>
+                <td>9,671.98</td>
+                <td>8,452.22</td>
+                <td>26,505.17</td>
+              </tr>
+              <tr>
+                <td>2010</td>
+                <td>10,735.38</td>
+                <td>9,520.18</td>
+                <td>28,313.34</td>
+              </tr>
+              <tr>
+                <td>2011</td>
+                <td>11,328.95</td>
+                <td>9,520.03</td>
+                <td>26,659.00</td>
+              </tr>
+              <tr>
+                <td>2012</td>
+                <td>12,147.44</td>
+                <td>10,785.45</td>
+                <td>30,995.98</td>
+              </tr>
+              <tr>
+                <td>2013</td>
+                <td>15,366.25</td>
+                <td>13,978.07</td>
+                <td>35,067.54</td>
+              </tr>
+              <tr>
+                <td>2014</td>
+                <td>16,526.13</td>
+                <td>15,591.35</td>
+                <td>34,109.96</td>
+              </tr>
+              <tr>
+                <td>2015</td>
+                <td>16,157.05</td>
+                <td>15,478.07</td>
+                <td>34,720.41</td>
+              </tr>
+              <tr>
+                <td>2016</td>
+                <td>18,345.10</td>
+                <td>17,001.65</td>
+                <td>43,161.60</td>
+              </tr>
+              <tr>
+                <td>2017</td>
+                <td>22,818.89</td>
+                <td>20,188.48</td>
+                <td>52,007.00</td>
+              </tr>
+              <tr>
+                <td>2018</td>
+                <td>21,455.90</td>
+                <td>18,857.89</td>
+                <td>52,152.66</td>
+              </tr>
+              <tr>
+                <td>2019</td>
+                <td>26,554.84</td>
+                <td>24,596.97</td>
+                <td>59,964.22</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            <center>Machine Learning</center>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><i>Quantifying Regression</i></th>
+                <th>Dow Jones Industrial Average (Dow 30)</th>
+                <th>S&P 500</th>
+                <th>TBM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linear Regression Slope</td>
+                <td>851.92329539</td>
+                <td>784.77284777</td>
+                <td>2330.93955062</td>
+              </tr>
+              <tr>
+                <td>Linear Regression y-Intercept</td>
+                <td>5091.9295173</td>
+                <td>4463.90136632</td>
+                <td>6933.25979721</td>
+              </tr>
+              <tr>
+                <td>Linear Regression R2 Score</td>
+                <td>0.587</td>
+                <td>0.468</td>
+                <td>0.847</td>
+              </tr>
+              <tr>
+                <td>KNN Regression R2 Score</td>
+                <td>0.867</td>
+                <td>0.819</td>
+                <td>0.867</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-dark" role="alert">
+            <center>
+              Click the link to learn about other <a href="https://scikit-learn.org/stable/"
+                class="alert-link">Regression
+                Models</a> in the scikit-learn library.</center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong><i>Quantifying Classification</i></strong>
+          <p>Can the performance of the seventeen (17) Dow Jones Industrial Average components that we recorded for a
+            particular year predict
+            the political party of the President? Let's look at 2019 and see what our KNN Classification Model predicts.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            <center>Further Conversation</center>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-dark" role="alert">
+            <center>
+              Pundits are thinking about the <a
+                href="https://www.fool.com/investing/2019/12/19/the-3-worst-dow-stocks-in-2019.aspx"
+                class="alert-link">same thing</a>.</center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Capital_gains_tax_in_the_United_States"
+        allowfullscreen></iframe>
+    </div>
+    <br>
+
+    <!-- Footer -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="ticker">
+            <strong>Information:</strong>
+            <ul>
+              <li>Three Blind Mice: Project 3</li>
+              <li>Michael Bell/Rob Chesser/Adam Durar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/static/js/jquery.ticker.min.js"></script>
+    <script>$('.ticker').ticker()</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
+    <script src="/static/js/app.js"></script>
+
+  </body>
+
+</html>
